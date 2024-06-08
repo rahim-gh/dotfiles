@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/fish
+#---------------
+
+# Exit termux
+termux-wake-unlock
+exit

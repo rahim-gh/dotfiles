@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/fish
+#---------------
+
+set -l time $(date +"%Y%m%d_%H%M%S")
+set -l file ~/storage/dcim/Camera/$time.jpg
+
+switch $argv
+    case "front"
+        termux-camera-photo -c 1 $file
+    case "*"
+        termux-camera-photo $file
+end
+
+echo -n "$time.jpg"
