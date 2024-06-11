@@ -83,7 +83,7 @@ if [ -n "$FILE_LIST" ]; then
   fi
 
   while IFS= read -r line; do
-    line=$(eval echo "$line")  # Evaluate the line to expand variables
+    line=$(echo "$line" | sed 's|^~|'"$HOME"'|')  # Replace '~' with '$HOME'
     if [ -e "$line" ]; then
       SRC_DIRS_AND_FILES+=("$line")
     else
@@ -95,7 +95,6 @@ else
   show_help
   exit 1
 fi
-
 
 
 # Prepare synchronization summary
