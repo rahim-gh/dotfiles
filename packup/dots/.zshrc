@@ -3,6 +3,7 @@
 
 # setup startup interface
 clear
+echo "welcome"
 figlet -f Isometric1 "Rahim"
 
 # Path to your oh-my-zsh installation.

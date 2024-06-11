@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- clipboard (termux)
+--set clipboard+=unnamedplus
+vim.opt.clipboard:append("unnamedplus")
+
 -- Declare variables
 local map = vim.keymap.set
 local default = { noremap=true, silent=true }

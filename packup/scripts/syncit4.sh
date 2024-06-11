@@ -74,34 +74,21 @@ if [ ! -d "$TARGET_DIR" ]; then
 fi
 
 # Get list of source files and directories
-SRC_DIRS_AND_FILES=()
-
 if [ -n "$FILE_LIST" ]; then
   if [ ! -f "$FILE_LIST" ]; then
-    echo -e "${RED}Error${NC}: File list '$FILE_LIST' does not exist"
+    echo "${RED}Error${NC}: File list '$FILE_LIST' does not exist"
     exit 1
   fi
-
-  while IFS= read -r line; do
-    line=$(echo "$line" | sed 's|^~|'"$HOME"'|')  # Replace '~' with '$HOME'
-    if [ -e "$line" ]; then
-      SRC_DIRS_AND_FILES+=("$line")
-    else
-      echo -e "${RED}Warning${NC}: '$line' does not exist"
-    fi
-  done < "$FILE_LIST"
+  SRC_DIRS_AND_FILES=($(sed 's|^~|'"$HOME"'|' "$FILE_LIST"))  # Replace '~' with '$HOME'
 else
-  echo "No file list provided."
-  show_help
-  exit 1
+  SRC_DIRS_AND_FILES=("$@")
 fi
-
 
 # Prepare synchronization summary
 SYNC_SUMMARY=""
 
 # Synchronize files and directories
-#echo -e "\n${BLUE}Synchronizing to '${TARGET_DIR}/' :${NC}"
+echo -e "\n${BLUE}Synchronizing to '${TARGET_DIR}/' :${NC}"
 for src_dir_or_file in "${SRC_DIRS_AND_FILES[@]}"; do
   src_dir_or_file=$(echo "$src_dir_or_file" | sed 's|^~|'"$HOME"'|')  # Replace '~' with '$HOME'
   subdir_or_file_name=$(basename "$src_dir_or_file")
@@ -161,15 +148,7 @@ for src_dir_or_file in "${SRC_DIRS_AND_FILES[@]}"; do
 done
 
 # Display synchronization summary
-#echo -e "$SYNC_SUMMARY"
-if [ -n "$SYNC_SUMMARY" ]; then
-  echo -e "\n${BLUE}Synchronizing to '${TARGET_DIR}/' :${NC}"
-  echo -e "$SYNC_SUMMARY"
-else
-  echo -e "\t${GREEN}No job to do${NC}"
-  exit 0
-fi
-
+echo -e "$SYNC_SUMMARY"
 
 # Ask for confirmation if not auto-accepting
 if ! $AUTO_ACCEPT; then

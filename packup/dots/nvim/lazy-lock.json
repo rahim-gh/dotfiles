@@ -4,8 +4,8 @@
   "highlight-undo.nvim": { "branch": "main", "commit": "1ea1c79372d7d93c88fd97543880927b7635e3d2" },
   "lazy.nvim": { "branch": "main", "commit": "eb4957442e3182f051b0ae11da32e06d22c190e3" },
   "mason.nvim": { "branch": "main", "commit": "0950b15060067f752fde13a779a994f59516ce3d" },
-  "mini.nvim": { "branch": "main", "commit": "1d4772e9f4f3ddc125a5ec1386fd4f85c7e3bb18" },
-  "nvim-lspconfig": { "branch": "master", "commit": "92166b89ab4b3d60f24e58170cac53b7141fd032" },
-  "nvim-treesitter": { "branch": "master", "commit": "9ebc589329083522f9594f408fc2652090b41139" },
+  "mini.nvim": { "branch": "main", "commit": "f1dd64cf2ac1b348bd440e59446abf680c7188d6" },
+  "nvim-lspconfig": { "branch": "master", "commit": "4d38bece98300e3e5cd24a9aa0d0ebfea4951c16" },
+  "nvim-treesitter": { "branch": "master", "commit": "eb59a3df509322924631c1ed85b0d2ec696bb78d" },
   "nvim-treesitter-context": { "branch": "master", "commit": "5efba33af0f39942e426340da7bc15d7dec16474" }
 }
