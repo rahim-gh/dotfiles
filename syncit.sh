@@ -41,7 +41,7 @@ show_help() {
   echo "  -V               Verbose mode (show changes with --dry-run)"
   echo "  -y               Auto-accept synchronization (skip confirmation)"
   echo "  -f <file_list>   Read source files/directories from a text file"
-  echo "  -d <target_dir>  Specify the target directory (default: current directory) *not fixed yet*"
+  echo "  -d <target_dir>  Specify the target directory (default: current directory)"
   echo "Examples:"
   echo "  $0 /path/to/source /path/to/target"
   echo "  $0 -f sources.txt -d /path/to/target"

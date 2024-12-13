@@ -1,6 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/fish
-#---------------
-
-# Turn on ssh daemon
-termux-wake-lock
-sshd
