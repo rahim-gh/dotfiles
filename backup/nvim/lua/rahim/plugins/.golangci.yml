@@ -1,0 +1,15 @@
+linters:
+  enable:
+    - lll
+  disable:
+    # https://github.com/golangci/golangci-lint/issues/4332
+    - staticcheck
+linters-settings:
+  lll:
+    line-length: 100
+issues:
+  exclude-rules:
+    - linters:
+        - lll
+      source: "^//go:generate "
+

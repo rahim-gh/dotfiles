@@ -1,0 +1,4 @@
+$HOME/.zshrc
+$HOME/.config/nvim
+$HOME/.config/starship.toml
+
