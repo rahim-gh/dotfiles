@@ -2,7 +2,7 @@
 -- Plugins that make the user interface better.
 
 --    Sections:
---       -> tokyonight                  [theme]
+--       -> monokai-pro                  [theme]
 --       -> astrotheme                  [theme]
 --       -> alpha-nvim                  [greeter]
 --       -> nvim-notify                 [notifications]
@@ -32,6 +32,20 @@ return {
     "folke/tokyonight.nvim",
     event = "User LoadColorSchemes",
     opts = {
+      dim_inactive = false,
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+      },
+    }
+  },
+
+  --  tokyonight [theme]
+  --  https://github.com/loctvl842/monokai-pro.nvim
+  {
+    "loctvl842/monokai-pro.nvim",
+    opts = {
+      filter = "octagon",
       dim_inactive = false,
       styles = {
         comments = { italic = true },
@@ -129,20 +143,27 @@ return {
         }
       else
         dashboard.section.header.val = {
-          [[888b      88                                                           88]],
-          [[8888b     88                                                           88]],
-          [[88 `8b    88                                                           88]],
-          [[88  `8b   88   ,adPPYba,   8b,dPPYba,  88,dPYba,,adPYba,   ,adPPYYba,  88]],
-          [[88   `8b  88  a8"     "8a  88P'   "Y8  88P'   "88"    "8a  ""     `Y8  88]],
-          [[88    `8b 88  8b       d8  88          88      88      88  ,adPPPPP88  88]],
-          [[88     `8888  "8a,   ,a8"  88          88      88      88  88,    ,88  88]],
-          [[88      `888   `"YbbdP"'   88          88      88      88  `"8bbdP"Y8  88]],
-          [[                                    __                ]],
-          [[                      ___   __  __ /\_\    ___ ___    ]],
-          [[                    /' _ `\/\ \/\ \\/\ \ /' __` __`\  ]],
-          [[                    /\ \/\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-          [[                    \ \_\ \_\ \___/  \ \_\ \_\ \_\ \_\]],
-          [[                     \/_/\/_/\/__/    \/_/\/_/\/_/\/_/]],
+        --   [[888b      88                                                           88]],
+        --   [[8888b     88                                                           88]],
+        --   [[88 `8b    88                                                           88]],
+        --   [[88  `8b   88   ,adPPYba,   8b,dPPYba,  88,dPYba,,adPYba,   ,adPPYYba,  88]],
+        --   [[88   `8b  88  a8"     "8a  88P'   "Y8  88P'   "88"    "8a  ""     `Y8  88]],
+        --   [[88    `8b 88  8b       d8  88          88      88      88  ,adPPPPP88  88]],
+        --   [[88     `8888  "8a,   ,a8"  88          88      88      88  88,    ,88  88]],
+        --   [[88      `888   `"YbbdP"'   88          88      88      88  `"8bbdP"Y8  88]],
+        --   [[                                    __                ]],
+        --   [[                      ___   __  __ /\_\    ___ ___    ]],
+        --   [[                    /' _ `\/\ \/\ \\/\ \ /' __` __`\  ]],
+        --   [[                    /\ \/\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+        --   [[                    \ \_\ \_\ \___/  \ \_\ \_\ \_\ \_\]],
+        --   [[                     \/_/\/_/\/__/    \/_/\/_/\/_/\/_/]],
+        -- }
+        [[                                __                 ]],
+        [[   ___     ___    ___   __  __ /\_\    ___ ___     ]],
+        [[  / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\   ]],
+        [[ /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \  ]],
+        [[ \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\ ]],
+        [[  \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/ ]],
         }
       end
 
@@ -221,13 +242,14 @@ return {
     event = "User BaseDefered",
     opts = function()
       local fps
-      if is_android then fps = 30 else fps = 144 end
+      if is_android then fps = 30 else fps = 45 end
 
       return {
-        timeout = 2500,
+        timeout = 2000,
         fps = fps,
         max_height = function() return math.floor(vim.o.lines * 0.75) end,
         max_width = function() return math.floor(vim.o.columns * 0.75) end,
+        top_down = false,
         on_open = function(win)
           -- enable markdown support on notifications
           vim.api.nvim_win_set_config(win, { zindex = 175 })
@@ -511,8 +533,8 @@ return {
     "stevearc/dressing.nvim",
     event = "User BaseDefered",
     opts = {
-      input = { default_prompt = "➤ " },
-      select = { backend = { "telescope", "builtin" } },
+      -- input = { default_prompt = "➤ " },
+      select = { backend = { "telescope", "builtin", "input" } },
     }
   },
 
@@ -705,11 +727,16 @@ return {
 
     opts_extend = { "disable.ft", "disable.bt" },
     opts = {
-      preset = "classic", -- "classic", "modern", or "helix"
+      -- preset = "classic", -- "classic", "modern", or "helix"
+      preset = "classic",
       icons = {
         group = (vim.g.fallback_icons_enabled and "+") or "",
         rules = false,
         separator = "-",
+      },
+      keys = {
+        scroll_up = "<C-h>",
+        scroll_down = "<C-l>",
       },
     },
     config = function(_, opts)

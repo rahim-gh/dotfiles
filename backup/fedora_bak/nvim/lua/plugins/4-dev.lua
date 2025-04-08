@@ -9,6 +9,7 @@
 --       ## GIT
 --       -> gitsigns.nvim                  [git hunks]
 --       -> fugitive.vim                   [git commands]
+--       -- covergae.nvim                  [git coverage]
 
 --       ## ANALYZER
 --       -> aerial.nvim                    [symbols tree]
@@ -143,6 +144,17 @@ return {
       vim.g.fugitive_no_maps = 1
     end,
   },
+  -- coverage.nvim
+  -- https://github.com/andythigpen/nvim-coverage
+   {
+      "andythigpen/nvim-coverage",
+      version = "*",
+      config = function()
+        require("coverage").setup({
+          auto_reload = true,
+        })
+      end,
+    },
 
   --  ANALYZER ----------------------------------------------------------------
   --  [symbols tree]
