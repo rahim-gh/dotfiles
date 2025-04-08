@@ -1,0 +1,1 @@
+/home/rahim/zsh/.zshrc

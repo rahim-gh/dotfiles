@@ -1,0 +1,30 @@
+# Sync Log - Started Tue  8 Apr 19:57:17 CET 2025
+[2025-04-08 19:57:17] Using file list: lists/debian-sid.text
+[2025-04-08 19:57:17] Target directory set to: backup/debian-sid
+[2025-04-08 19:57:17] Added source path: /home/rahim/.zshrc
+[2025-04-08 19:57:17] Added source path: /home/rahim/.zsh
+[2025-04-08 19:57:17] Added source path: /home/rahim/.bashrc
+[2025-04-08 19:57:17] Added source path: /home/rahim/.config/nvim
+[2025-04-08 19:57:17] Added source path: /home/rahim/.config/starship.toml
+[2025-04-08 19:57:17] Added source path: /home/rahim/.config/helix
+[2025-04-08 19:57:17] Added source path: /home/rahim/.vim
+[2025-04-08 19:57:17] Added source path: /home/rahim/.vimrc
+[2025-04-08 19:57:17] Found 8 valid source paths
+[2025-04-08 19:57:17] Will create: .zshrc
+[2025-04-08 19:57:17] Will create: .zsh
+[2025-04-08 19:57:17] Will create: .bashrc
+[2025-04-08 19:57:17] Will create: nvim
+[2025-04-08 19:57:17] Will create: starship.toml
+[2025-04-08 19:57:17] Will create: helix
+[2025-04-08 19:57:17] Will create: .vim
+[2025-04-08 19:57:17] Will create: .vimrc
+[2025-04-08 19:57:21] Starting synchronization
+[2025-04-08 19:57:21] Successfully synchronized: .zshrc
+[2025-04-08 19:57:21] Successfully synchronized: .zsh
+[2025-04-08 19:57:21] Successfully synchronized: .bashrc
+[2025-04-08 19:57:21] Successfully synchronized: nvim
+[2025-04-08 19:57:21] Successfully synchronized: starship.toml
+[2025-04-08 19:57:21] Successfully synchronized: helix
+[2025-04-08 19:57:22] Successfully synchronized: .vim
+[2025-04-08 19:57:22] Successfully synchronized: .vimrc
+[2025-04-08 19:57:22] Synchronization completed successfully

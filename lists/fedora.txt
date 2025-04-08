@@ -1,6 +1,0 @@
-$HOME/.zshrc
-$HOME/.config/nvim
-$HOME/.config/starship.toml
-$HOME/.vim
-$HOME/.vimrc
-
